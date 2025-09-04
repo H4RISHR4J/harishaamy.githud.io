@@ -29,10 +29,15 @@ export default function HomePage() {
           <p className="text-slate-500">Projects coming soon.</p>
         ) : (
           <div className="grid gap-4 md:grid-cols-2">
-            {siteData.projects.map((p, index) => (
-              <div key={p.title} style={{ animationDelay: `${index * 100}ms` }}>
-                <ProjectCard title={p.title} description={p.description} tags={p.tags} link={p.link} repo={p.repo} />
-              </div>
+            {siteData.projects.map((p) => (
+              <ProjectCard
+                key={p.title}
+                title={p.title}
+                description={p.description}
+                tags={p.tags}
+                link={p.link}
+                repo={p.repo}
+              />
             ))}
           </div>
         )}

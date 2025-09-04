@@ -1,9 +1,6 @@
-"use client"
-
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 type Props = {
   title: string
@@ -14,15 +11,8 @@ type Props = {
 }
 
 export function ProjectCard({ title, description, tags, link, repo }: Props) {
-  const { ref, isVisible } = useScrollAnimation()
-
   return (
-    <Card
-      ref={ref}
-      className={`transition-all duration-500 ease-out hover:border-black/40 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-      }`}
-    >
+    <Card className="transition-colors hover:border-black/40">
       <CardHeader>
         <CardTitle className="text-base font-semibold text-white">{title}</CardTitle>
       </CardHeader>
